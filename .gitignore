@@ -39,13 +39,13 @@ replay_*.log
 *.hprof
 *.jfr
 
-# registros del juego de desarrollo
+# development game logs
 logs/
 
 # ---------------------------------------------------------------------------
-# Código cerrado: el código fuente y el proyecto de compilación se quedan solo en
-# local. El repositorio público solo contiene README, LICENSE y este archivo; los
-# .jar se publican en las releases.
+# Closed source: the source code and the build project stay local only. The
+# public repository only contains README, LICENSE and this file; the .jar files
+# are published in the releases.
 # ---------------------------------------------------------------------------
 src/
 tools/

@@ -57,3 +57,4 @@ build.gradle
 settings.gradle
 gradle.properties
 *.jar
+backups/

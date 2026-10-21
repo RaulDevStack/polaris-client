@@ -1,6 +1,6 @@
 # Polaris Client
 
-A modular client for **Minecraft Java 26.2** (Fabric) with an arctic look: more than 60 render, HUD, camera, movement
+A modular client for **Minecraft Java 26.3 and 26.2** (Fabric) with an arctic look: more than 60 render, HUD, camera, movement
 and utility modules, its own menu with search, configuration profiles and a HUD editor.
 
 > Polaris Client is closed-source software: this repository only publishes the compiled builds
@@ -8,17 +8,18 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 ## Requirements
 
-| | Version |
-|---|---|
-| Minecraft Java | 26.2 |
-| [Fabric Loader](https://fabricmc.net/use/) | 0.19.5 or newer |
-| [Fabric API](https://modrinth.com/mod/fabric-api) | 0.161.0+26.2 or newer |
-| Java | 25 |
+| | Minecraft 26.3 | Minecraft 26.2 |
+|---|---|---|
+| Polaris Client file | `polaris-client-0.1.0_26.3.jar` | `polaris-client-0.1.0.jar` |
+| [Fabric Loader](https://fabricmc.net/use/) | 0.20.1 or newer | 0.19.5 or newer |
+| [Fabric API](https://modrinth.com/mod/fabric-api) | 0.164.0+26.3 or newer | 0.161.0+26.2 or newer |
+| Java | 25 | 25 |
 
 ## Installation
 
-1. Install Fabric Loader for Minecraft 26.2.
-2. Download `polaris-client-<version>.jar` from the latest [release](https://github.com/RaulDevStack/polaris-client/releases).
+1. Install Fabric Loader for your Minecraft version (26.3 or 26.2).
+2. Download the Polaris Client `.jar` for that version from the [releases](https://github.com/RaulDevStack/polaris-client/releases)
+   (see the table above).
 3. Put the `.jar` and Fabric API in the `mods` folder of your Minecraft installation.
 4. Launch the game with the Fabric profile.
 

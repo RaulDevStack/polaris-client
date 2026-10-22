@@ -10,7 +10,7 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 | | Minecraft 26.3 | Minecraft 26.2 |
 |---|---|---|
-| Polaris Client file | `polaris-client-0.1.1_26.3.jar` | `polaris-client-0.1.0.jar` |
+| Polaris Client file | `polaris-client-0.1.2_26.3.jar` | `polaris-client-0.1.0.jar` |
 | [Fabric Loader](https://fabricmc.net/use/) | 0.20.1 or newer | 0.19.5 or newer |
 | [Fabric API](https://modrinth.com/mod/fabric-api) | 0.164.0+26.3 or newer | 0.161.0+26.2 or newer |
 | Java | 25 | 25 |

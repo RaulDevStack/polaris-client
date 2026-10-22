@@ -10,7 +10,7 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 | | Minecraft 26.3 | Minecraft 26.2 |
 |---|---|---|
-| Polaris Client file | `polaris-client-0.1.0_26.3.jar` | `polaris-client-0.1.0.jar` |
+| Polaris Client file | `polaris-client-0.1.1_26.3.jar` | `polaris-client-0.1.0.jar` |
 | [Fabric Loader](https://fabricmc.net/use/) | 0.20.1 or newer | 0.19.5 or newer |
 | [Fabric API](https://modrinth.com/mod/fabric-api) | 0.164.0+26.3 or newer | 0.161.0+26.2 or newer |
 | Java | 25 | 25 |
@@ -44,7 +44,7 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 **Player** — God Mode · No Fall Damage · Sit · Auto Tool · Auto Eat
 
 **Render** — Entity ESP · Entity Hitbox · Fullbright · No Fog · No Particles · Custom Block Highlight · Ore ESP ·
-Ore Borders · Xray · Clouds · Custom Skybox (day and night skies) · Waypoints · Light Level Overlay · Chunk Borders ·
+Ore Borders · Chest ESP · Xray · Clouds · Custom Skybox (day and night skies) · Waypoints · Light Level Overlay · Chunk Borders ·
 Nametags · Item Physics · Liquid Flow · Weather · Clear Water · Wavy Water · Wavy Plants · Wavy Leaves · Bushy Leaves ·
 Connected Glass
 
@@ -55,7 +55,7 @@ Connected Glass
 **HUD** — FPS · Coordinates · Speed · CPS · Day Counter · Clock · Compass · Crosshair · Ping · Module List · Armor Status ·
 Potion Effects · Held Item Info · Block Info · Target HUD · Keystrokes
 
-**Misc** — Notifications · Inventory Sorter · Chat Utilities · Chat Animations
+**Misc** — Notifications · Inventory Sorter · Inventory Tweaks · Shulker Preview · Chat Utilities · Chat Animations
 
 Visual effects (Bushy Leaves, Connected Glass, Wavy…) use whatever textures you have loaded, so they work with any
 resource pack.

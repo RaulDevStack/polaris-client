@@ -10,7 +10,7 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 | | Minecraft 26.3 | Minecraft 26.2 |
 |---|---|---|
-| Polaris Client file | `polaris-client-0.1.6_26.3.jar` | `polaris-client-0.1.0.jar` |
+| Polaris Client file | `polaris-client-0.1.7_26.3.jar` | `polaris-client-0.1.0.jar` |
 | [Fabric Loader](https://fabricmc.net/use/) | 0.20.1 or newer | 0.19.5 or newer |
 | [Fabric API](https://modrinth.com/mod/fabric-api) | 0.164.0+26.3 or newer | 0.161.0+26.2 or newer |
 | Java | 25 | 25 |
@@ -93,6 +93,7 @@ it first (no mining between hits):
 | **Semi Chop** | Break the first log of a tree and the bot cuts the rest. Moving cancels it. |
 | **Auto Mine** | Looks for the ores you choose (diamond, iron, gold… or any block id), digs a tunnel to them, mines the whole vein and picks up the drops. |
 | **Vein Mine** | Mine one ore and the bot mines the rest of the vein. Moving cancels it. |
+| **World Edit** | Builds or breaks simple shapes between two corners: a rectangle or a circle, filled, outline only (*Walls*) or hollow with floor and roof (*Shell*). With corners at different heights the shape is 3D (a box or a cylinder). Press the *Corner Key* (G) once for corner 1 and again for corner 2, at the block you look at, with a live preview as you move. A third press clears both. Then press the *Start Key* (H) or the **Start / Stop** button. *Build* places the chosen *Material* from your inventory, bottom to top; *Break* breaks every block of the shape, top to bottom. The preview shows the corners and the blocks still to build or break. |
 | **Auto Combat** | For leaving your character AFK: it does no task, it stays where it is and only defends itself with the Self Defense rules (creepers, shooters, groups…), always holding your best weapon (taken from the inventory if needed). It never goes farther than *Max Distance From Spot* (12 blocks by default) and ignores mobs outside that area. When health gets low it runs to the safest spot inside that area, keeps an eye on the mobs, and eats to regenerate (golden apples first). Against a skeleton it decides whether to kill it first or eat first: if it can kill it quickly and still have health to spare, it fights; otherwise it eats behind cover, out of the skeleton's sight. It always finishes a bite once it starts, then walks back to its spot. |
 
 It picks the best tool in your hotbar, doesn't break blocks next to water or lava or under sand and gravel, and never

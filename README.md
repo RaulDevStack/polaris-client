@@ -10,7 +10,7 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 | | Minecraft 26.3 | Minecraft 26.2 |
 |---|---|---|
-| Polaris Client file | `polaris-client-0.1.5_26.3.jar` | `polaris-client-0.1.0.jar` |
+| Polaris Client file | `polaris-client-0.1.6_26.3.jar` | `polaris-client-0.1.0.jar` |
 | [Fabric Loader](https://fabricmc.net/use/) | 0.20.1 or newer | 0.19.5 or newer |
 | [Fabric API](https://modrinth.com/mod/fabric-api) | 0.164.0+26.3 or newer | 0.161.0+26.2 or newer |
 | Java | 25 | 25 |
@@ -40,9 +40,9 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 **Combat** — Kill Aura · Target Focus · Damage Indicators · Attack Through Grass
 
-**Movement** — Fly · Bhop · Crawl · Auto Sneak · Moonwalk
+**Movement** — Fly · Elytra Fly · Boat Fly · Bhop · Crawl · Auto Sneak · Moonwalk
 
-**Player** — God Mode · No Fall Damage · Sit · Auto Tool · Auto Eat · Player Bot
+**Player** — God Mode · No Fall Damage · Sit · Auto Tool · Auto Eat · Auto Elytra · Auto Totem · Auto Refill · Player Bot
 
 **Render** — Entity ESP · Entity Hitbox · Fullbright · No Fog · No Particles · Custom Block Highlight · Ore ESP ·
 Ore Borders · Chest ESP · Xray · Clouds · Custom Skybox (day and night skies) · Waypoints · Light Level Overlay · Chunk Borders ·
@@ -98,6 +98,26 @@ it first (no mining between hits):
 It picks the best tool in your hotbar, doesn't break blocks next to water or lava or under sand and gravel, and never
 breaks chests or other blocks with contents. It stops when your health is low or your inventory is full, and pauses
 while you press a movement key (*Manual Override*). The planned path can be drawn on screen.
+
+### Auto Elytra, Auto Totem and Auto Refill
+
+- **Auto Elytra**: when you fall more than *Fall Height* blocks, it puts on the elytra from your inventory (swapping out
+  your chestplate) and opens it. After landing (even after crashing into a wall) it puts your chestplate back on (*Swap Back*).
+- **Auto Totem**: always keeps a totem of undying in your offhand. When one is used up, it puts in the next one.
+- **Auto Refill**: when a hotbar stack (or your offhand) runs out, it refills the slot with another stack of exactly
+  the same item, never a different one. It takes it from your inventory or, if the only other stack is in the hotbar,
+  from there. A broken tool or weapon is replaced with another of the same kind
+  (*Refill Tools*).
+
+### Elytra Fly and Boat Fly
+
+**Elytra Fly** gives elytra a new, free control while gliding. You fly where you look with W (up or down too, like
+normal elytra), S and A/D move backward and sideways, jump rises and sneak descends. Let go of the keys and you stop
+and hover in place instead of falling. Speed follows your keys smoothly, so it still feels like gliding
+(*Responsiveness*). With *Auto Start* you start gliding as soon as you fall with elytra on.
+
+**Boat Fly** keeps any boat you ride floating in the air: jump makes it rise and the sprint key makes it descend (sneak
+still gets you out). W, S, A and D steer it as usual.
 
 **Orbital Camera** uses the same pathfinding for *Smart Movement*: you steer with the movement keys and your character
 jumps up blocks, steps around small obstacles, opens doors and stops at the edge of long drops instead of falling.

@@ -10,7 +10,7 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 | | Minecraft 26.3 | Minecraft 26.2 |
 |---|---|---|
-| Polaris Client file | `polaris-client-0.1.4_26.3.jar` | `polaris-client-0.1.0.jar` |
+| Polaris Client file | `polaris-client-0.1.5_26.3.jar` | `polaris-client-0.1.0.jar` |
 | [Fabric Loader](https://fabricmc.net/use/) | 0.20.1 or newer | 0.19.5 or newer |
 | [Fabric API](https://modrinth.com/mod/fabric-api) | 0.164.0+26.3 or newer | 0.161.0+26.2 or newer |
 | Java | 25 | 25 |
@@ -76,7 +76,10 @@ With **Self Defense** on, the bot fights back during a task, then carries on wit
 it first (no mining between hits):
 - It hits hostile mobs that come close with your best weapon (most damage per second, counting Sharpness), timing
   full-strength **critical hits**.
-- If something shoots you (a skeleton, for example), it finds the shooter, goes after it and kills it.
+- If something shoots you (a skeleton, for example), the shooter becomes its main target: it goes after it and kills it
+  first, even in the middle of another fight.
+- **Dodge Arrows**: it predicts where arrows and other projectiles will land and steps aside from the ones that would
+  hit you.
 - **Creepers**: it sprint-hits them for extra knockback, backs off, and runs away if one starts to swell.
 - **Groups**: when more than 2 hostile mobs are close (configurable), it stops fighting and runs toward the task's
   destination along a path that keeps away from them. If the task has no destination, it runs to a safe spot away from
@@ -90,7 +93,7 @@ it first (no mining between hits):
 | **Semi Chop** | Break the first log of a tree and the bot cuts the rest. Moving cancels it. |
 | **Auto Mine** | Looks for the ores you choose (diamond, iron, gold… or any block id), digs a tunnel to them, mines the whole vein and picks up the drops. |
 | **Vein Mine** | Mine one ore and the bot mines the rest of the vein. Moving cancels it. |
-| **Auto Combat** | For leaving your character AFK: it does no task, it stays where it is and only defends itself with the Self Defense rules (creepers, shooters, groups…), always holding your best weapon (taken from the inventory if needed). It never goes farther than *Max Distance From Spot* (12 blocks by default) and ignores mobs outside that area. When health gets low it runs to the safest spot inside that area, keeps an eye on the mobs, and eats to regenerate (golden apples first). It always finishes a bite once it starts, then walks back to its spot. |
+| **Auto Combat** | For leaving your character AFK: it does no task, it stays where it is and only defends itself with the Self Defense rules (creepers, shooters, groups…), always holding your best weapon (taken from the inventory if needed). It never goes farther than *Max Distance From Spot* (12 blocks by default) and ignores mobs outside that area. When health gets low it runs to the safest spot inside that area, keeps an eye on the mobs, and eats to regenerate (golden apples first). Against a skeleton it decides whether to kill it first or eat first: if it can kill it quickly and still have health to spare, it fights; otherwise it eats behind cover, out of the skeleton's sight. It always finishes a bite once it starts, then walks back to its spot. |
 
 It picks the best tool in your hotbar, doesn't break blocks next to water or lava or under sand and gravel, and never
 breaks chests or other blocks with contents. It stops when your health is low or your inventory is full, and pauses
@@ -98,6 +101,8 @@ while you press a movement key (*Manual Override*). The planned path can be draw
 
 **Orbital Camera** uses the same pathfinding for *Smart Movement*: you steer with the movement keys and your character
 jumps up blocks, steps around small obstacles, opens doors and stops at the edge of long drops instead of falling.
+Without Smart Movement it walks the same way (turning smoothly toward where you steer and always moving forward, which
+servers handle better) but goes straight where you point, with no automatic jumps or avoiding.
 
 Visual effects (Bushy Leaves, Connected Glass, Wavy…) use whatever textures you have loaded, so they work with any
 resource pack.

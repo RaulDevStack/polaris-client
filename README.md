@@ -10,7 +10,7 @@ and utility modules, its own menu with search, configuration profiles and a HUD 
 
 | | Minecraft 26.3 | Minecraft 26.2 |
 |---|---|---|
-| Polaris Client file | `polaris-client-0.1.8_26.3.jar` | `polaris-client-0.1.0.jar` |
+| Polaris Client file | `polaris-client-0.1.9_26.3.jar` | `polaris-client-0.1.0.jar` |
 | [Fabric Loader](https://fabricmc.net/use/) | 0.20.1 or newer | 0.19.5 or newer |
 | [Fabric API](https://modrinth.com/mod/fabric-api) | 0.164.0+26.3 or newer | 0.161.0+26.2 or newer |
 | Java | 25 | 25 |
@@ -54,7 +54,7 @@ Connected Glass
 **Camera** — Free Camera · Orbital Camera · Zoom
 
 **HUD** — FPS · Coordinates · Speed · CPS · Day Counter · Clock · Compass · Crosshair · Ping · Module List · Armor Status ·
-Potion Effects · Held Item Info · Block Info · Target HUD · Keystrokes
+Potion Effects · Held Item Info · Block Info · Target HUD · Keystrokes · Bot Debug
 
 **Misc** — Notifications · Inventory Sorter · Inventory Tweaks · Shulker Preview · Chat Utilities · Chat Animations
 
@@ -93,8 +93,27 @@ it first (no mining between hits):
 | **Semi Chop** | Break the first log of a tree and the bot cuts the rest. Moving cancels it. |
 | **Auto Mine** | Looks for the ores you choose (diamond, iron, gold… or any block id), digs a tunnel to them, mines the whole vein and picks up the drops. |
 | **Vein Mine** | Mine one ore and the bot mines the rest of the vein. Moving cancels it. |
+| **Agent** | Reaches an objective on its own: logs, planks, sticks, a crafting table, cobblestone, a pickaxe, axe, shovel or sword (wooden or stone), or **clearing the chunk** you're in (*Chunk Depth* layers down and *Chunk Above* layers up), keeping its tools in shape as it goes. It works out the steps itself (chop a tree, craft planks and sticks in the inventory, craft and place a crafting table, craft a pickaxe at the table, mine stone…) and checks each result in your inventory before moving on. If something changes (the table is gone, a step fails) it makes a new plan from what it has. It stops to fight, heal or eat when needed and then carries on, and gives up with a clear reason if the objective isn't possible (for example, no trees nearby). Before planning it looks inside nearby chests and barrels and takes what it needs from them instead of gathering it again, and it uses the nearest crafting table it knows. It remembers its crafting table, what was in each chest and how well each step works between sessions (*Remember Between Sessions*). |
 | **World Edit** | Builds or breaks simple shapes between two corners: a rectangle or a circle, filled, outline only (*Walls*) or hollow with floor and roof (*Shell*). With corners at different heights the shape is 3D (a box or a cylinder). Press the *Corner Key* (G) once for corner 1 and again for corner 2, at the block you look at, with a live preview as you move. A third press clears both. Then press the *Start Key* (H) or the **Start / Stop** button. *Build* places the chosen *Material* from your inventory, bottom to top; *Break* breaks every block of the shape, top to bottom. It works like a person would: layer by layer, row by row back and forth (or around the ring for walls), doing everything in reach before taking a step, without stopping between blocks. The preview shows the corners and the blocks still to build or break. |
 | **Auto Combat** | For leaving your character AFK: it does no task, it stays where it is and only defends itself with the Self Defense rules (creepers, shooters, groups…), always holding your best weapon (taken from the inventory if needed). It never goes farther than *Max Distance From Spot* (12 blocks by default) and ignores mobs outside that area. When health gets low it runs to the safest spot inside that area, keeps an eye on the mobs, and eats to regenerate (golden apples first). Against a skeleton it decides whether to kill it first or eat first: if it can kill it quickly and still have health to spare, it fights; otherwise it eats behind cover, out of the skeleton's sight. It always finishes a bite once it starts, then walks back to its spot. |
+
+**Replace Broken Tools**: in any task, when the bot needs a tool it doesn't have (a pickaxe or shovel to mine or clear,
+an axe to chop, a sword in Auto Combat) or its tool breaks, it pauses, gets a new one with the agent (from a chest, or
+gathering materials and crafting it at the nearest crafting table) and carries on where it was. It makes wooden or stone
+tools; it can't smelt, so it won't make iron ones. Tools anywhere in your inventory count: the bot moves the best one to the hotbar when it needs it. It never goes for a tool while a mob is in sight, and in Auto Combat
+it only replaces a weapon that broke. If it ever can't make progress for a while, it tells you in chat what it was trying
+to do and tries another way instead of standing still.
+
+**Jump Gaps**: the bot sprint-jumps over holes and lava pools (1-2 blocks, 3 with a run-up) when that's the best way.
+If Auto Walk finds no walking route, it tries again digging through (and building, with blocks) before giving up.
+
+**Pathfinding** prefers slightly longer routes that keep away from lava, fire and cactus (*Hazard Avoidance*), and a
+long or impossible search is spread over several ticks so the game doesn't stutter (*Search Nodes Per Tick*). It tracks real progress toward
+each step, so it notices when it's going in circles (for example on top of a block it just placed) instead of only
+when it stops moving; then it stops, backs off a little and looks for another way, and after repeated failures it gives
+up with a reason. It only starts cutting or mining a block while standing, so on tall and thick trees it builds up next
+to the trunk and cuts properly instead of chopping in mid-jump. The **Bot Debug** HUD element shows what the bot is doing and why: task, goal and scores, plan and current
+step, last failure, path search and safety.
 
 It picks the best tool in your hotbar, doesn't break blocks next to water or lava or under sand and gravel, and never
 breaks chests or other blocks with contents. It stops when your health is low or your inventory is full, and pauses
